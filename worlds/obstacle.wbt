@@ -1,0 +1,265 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  basicTimeStep 16
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.6795617276690447 0.6697396262220588 0.2994072333050762 5.1194364565716945
+  position -1.0665675603092248 1.8336751958300674 1.188626723663219
+  follow "robot"
+}
+TexturedBackground {
+  skybox FALSE
+}
+TexturedBackgroundLight {
+}
+Floor {
+  tileSize 1 1
+  appearance Parquetry {
+    type "chequered"
+    IBLStrength 0
+  }
+}
+Robot {
+  translation 0 0.13 0
+  children [
+    Robot {
+      translation 0.07 0.05 0.06
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            axis 0 1 0
+            anchor 0 0.055 0
+          }
+          device [
+            RotationalMotor {
+              name "motor1"
+            }
+          ]
+          endPoint Solid {
+            translation 0 0.055 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  anchor -0.058 0 0
+                }
+                device [
+                  RotationalMotor {
+                    name "motor2"
+                  }
+                ]
+                endPoint Solid {
+                  translation -0.058 0 0
+                  rotation 0 0 1 1.5708
+                  children [
+                    Solid {
+                      translation 0 0 -0.24
+                      children [
+                        Shape {
+                          appearance PBRAppearance {
+                            baseColor 0.337255 0.337255 0.337255
+                            roughness 1
+                            metalness 0
+                          }
+                          geometry Box {
+                            size 0.03 0.03 0.5
+                          }
+                        }
+                      ]
+                    }
+                    Shape {
+                      appearance PBRAppearance {
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.05
+                        radius 0.03
+                      }
+                    }
+                  ]
+                }
+              }
+              Shape {
+                appearance PBRAppearance {
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.05
+                  radius 0.03
+                }
+              }
+            ]
+          }
+        }
+        DEF BASE Shape {
+          appearance PBRAppearance {
+            baseColor 0.180392 0.180392 0.180392
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.05
+            radius 0.03
+          }
+        }
+      ]
+      name "arm"
+      controller "arm_controller"
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.125 -0.03 0.06
+      }
+      device [
+        RotationalMotor {
+          name "wheel_1"
+        }
+      ]
+      endPoint DEF WHEEL_1 Solid {
+        translation 0.125 -0.03 0.06
+        rotation 0 0 1 1.5708
+        children [
+          DEF WHEEL Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/checkered_marble.jpg"
+                ]
+              }
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.04
+              radius 0.05
+            }
+          }
+        ]
+        boundingObject USE WHEEL
+        physics DEF WHEEL_PH Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.125 -0.03 -0.06
+      }
+      device [
+        RotationalMotor {
+          name "wheel_2"
+        }
+      ]
+      endPoint DEF WHEEL_1 Solid {
+        translation 0.125 -0.03 -0.06
+        rotation 0 0 1 1.5708
+        children [
+          DEF WHEEL Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/checkered_marble.jpg"
+                ]
+              }
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.04
+              radius 0.05
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE WHEEL
+        physics DEF WHEEL_PH Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.125 -0.03 0.06
+      }
+      device [
+        RotationalMotor {
+          name "wheel_3"
+        }
+      ]
+      endPoint DEF WHEEL_2 Solid {
+        translation -0.125 -0.03 0.06
+        rotation 0 0 1 1.5708
+        children [
+          DEF WHEEL Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/checkered_marble.jpg"
+                ]
+              }
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.04
+              radius 0.05
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics DEF WHEEL_PH Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.125 -0.03 -0.06
+      }
+      device [
+        RotationalMotor {
+          name "wheel_4"
+        }
+      ]
+      endPoint DEF WHEEL_2 Solid {
+        translation -0.125 -0.03 -0.06
+        rotation 0 0 1 1.5708
+        children [
+          DEF WHEEL Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/checkered_marble.jpg"
+                ]
+              }
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.04
+              radius 0.05
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE WHEEL
+        physics DEF WHEEL_PH Physics {
+        }
+      }
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.654902 0.101961
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.1 0.2
+      }
+    }
+  ]
+  boundingObject USE BODY
+  physics Physics {
+  }
+  controller "movement_controller"
+}
