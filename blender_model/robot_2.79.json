@@ -82,5 +82,45 @@
             "name": "grip_base_motor"
         },
         "boundingObject": {}
+    },
+    "GRIP_A": {
+        "target node": "HingeJoint",
+        "jointParameters": {
+            "axis": "0 0 1"
+        },
+        "motor": {
+            "name": "grip_a_motor"
+        },
+        "boundingObject": {}
+    },
+    "GRIP_B": {
+        "target node": "HingeJoint",
+        "jointParameters": {
+            "axis": "0 0 1"
+        },
+        "motor": {
+            "name": "grip_b_motor"
+        },
+        "boundingObject": {}
+    },
+    "GRIP_C": {
+        "target node": "HingeJoint",
+        "jointParameters": {
+            "axis": "1 0 0"
+        },
+        "motor": {
+            "name": "grip_c_motor"
+        },
+        "boundingObject": {}
+    },
+    "GRIP_D": {
+        "target node": "HingeJoint",
+        "jointParameters": {
+            "axis": "1 0 0"
+        },
+        "motor": {
+            "name": "grip_d_motor"
+        },
+        "boundingObject": {}
     }
 }

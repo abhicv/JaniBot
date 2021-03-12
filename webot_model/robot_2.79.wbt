@@ -4,8 +4,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.062460201469028066 0.9815326305482297 0.18081044881732106 3.7996248946356066
-  position -2.3513648758289425 1.7648150926519741 -3.28354758765076
+  orientation -0.12633479975540904 -0.9481343035413483 -0.29168623693778056 2.3596558926295748
+  position -2.59241840592244 2.624807340320008 -2.873398300947317
 }
 TexturedBackground {
 }
@@ -294,137 +294,219 @@ DEF BODY Robot {
                                                         ]
                                                       }
                                                     }
-                                                    DEF GRIP Transform {
-                                                      translation -1.49012e-08 0.00192595 -0.0656731
-                                                      children [
-                                                        Shape {
-                                                          appearance DEF MATERIAL PBRAppearance {
-                                                            baseColor 0.8 0.8 0.8
-                                                            roughness 0.5
-                                                            metalness 0
-                                                          }
-                                                          geometry IndexedFaceSet {
-                                                            coord DEF COORDS_ME_SHAPE_INDEXEDFACESET_008 Coordinate {
-                                                              point [
-                                                                0.012335 3.43125e-09 -0.013134
-                                                                -0.012335 -6.75836e-09 -0.013134
-                                                                0.012335 6.75836e-09 0.013134
-                                                                -0.012335 -3.43125e-09 0.013134
-                                                                0.0123351 -0.163764 0.026622
-                                                                -0.0123349 -0.163764 0.026622
-                                                                0.0123351 -0.163764 0.0528901
-                                                                -0.0123349 -0.163764 0.0528901
-                                                                0.012335 -0.0818821 0.013134
-                                                                -0.012335 -0.0818821 0.013134
-                                                                0.012335 -0.0818821 -0.013134
-                                                                -0.012335 -0.0818821 -0.013134
-                                                              ]
-                                                            }
-                                                            coordIndex [
-                                                              0, 1, 3, 2, -1, 8, 9, 7, 6, -1, 6, 7, 5, 4, -1, 1, 0, 10, 11, -1, 8, 6, 4, 10, -1, 9, 3, 1, 11, -1, 7, 9, 11, 5, -1, 10, 0, 2, 8, -1, 4, 5, 11, 10, -1, 2, 3, 9, 8, -1
-                                                            ]
-                                                          }
+                                                    DEF GRIP_D HingeJoint {
+                                                      jointParameters HingeJointParameters {
+                                                        anchor -1.49012e-08 0.00192595 -0.0656731
+                                                      }
+                                                      device [
+                                                        RotationalMotor {
+                                                          name "grip_d_motor"
                                                         }
                                                       ]
+                                                      endPoint Solid {
+                                                        translation -1.49012e-08 0.00192595 -0.0656731
+                                                        rotation 1 0 0 0
+                                                        children [
+                                                          Shape {
+                                                            appearance DEF MATERIAL PBRAppearance {
+                                                              baseColor 0.8 0.8 0.8
+                                                              roughness 0.5
+                                                              metalness 0
+                                                            }
+                                                            geometry IndexedFaceSet {
+                                                              coord DEF COORDS_ME_SHAPE_INDEXEDFACESET_008 Coordinate {
+                                                                point [
+                                                                  0.012335 3.43125e-09 -0.013134
+                                                                  -0.012335 -6.75836e-09 -0.013134
+                                                                  0.012335 6.75836e-09 0.013134
+                                                                  -0.012335 -3.43125e-09 0.013134
+                                                                  0.0123351 -0.163764 0.026622
+                                                                  -0.0123349 -0.163764 0.026622
+                                                                  0.0123351 -0.163764 0.0528901
+                                                                  -0.0123349 -0.163764 0.0528901
+                                                                  0.012335 -0.0818821 0.013134
+                                                                  -0.012335 -0.0818821 0.013134
+                                                                  0.012335 -0.0818821 -0.013134
+                                                                  -0.012335 -0.0818821 -0.013134
+                                                                ]
+                                                              }
+                                                              coordIndex [
+                                                                0, 1, 3, 2, -1, 8, 9, 7, 6, -1, 6, 7, 5, 4, -1, 1, 0, 10, 11, -1, 8, 6, 4, 10, -1, 9, 3, 1, 11, -1, 7, 9, 11, 5, -1, 10, 0, 2, 8, -1, 4, 5, 11, 10, -1, 2, 3, 9, 8, -1
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                        name "grip_d_motor"
+                                                        boundingObject Transform {
+                                                          translation 4.19095e-08 -0.0818821 0.019878
+                                                          children [
+                                                            Box {
+                                                              size 0.0246701 0.163764 0.0660241
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
                                                     }
-                                                    DEF GRIP_001 Transform {
-                                                      translation 5.21541e-08 0.00192595 0.0657499
-                                                      children [
-                                                        Shape {
-                                                          appearance DEF MATERIAL PBRAppearance {
-                                                            baseColor 0.8 0.8 0.8
-                                                            roughness 0.5
-                                                            metalness 0
-                                                          }
-                                                          geometry IndexedFaceSet {
-                                                            coord DEF COORDS_ME_SHAPE_INDEXEDFACESET_009 Coordinate {
-                                                              point [
-                                                                -0.012335 -3.43125e-09 0.013134
-                                                                0.012335 6.75836e-09 0.013134
-                                                                -0.012335 -6.75836e-09 -0.013134
-                                                                0.012335 3.43125e-09 -0.013134
-                                                                -0.012335 -0.163764 -0.026622
-                                                                0.0123351 -0.163764 -0.026622
-                                                                -0.012335 -0.163764 -0.05289
-                                                                0.0123351 -0.163764 -0.05289
-                                                                -0.012335 -0.0818821 -0.013134
-                                                                0.012335 -0.0818821 -0.013134
-                                                                -0.012335 -0.0818821 0.013134
-                                                                0.012335 -0.0818821 0.013134
-                                                              ]
-                                                            }
-                                                            coordIndex [
-                                                              0, 1, 3, 2, -1, 8, 9, 7, 6, -1, 6, 7, 5, 4, -1, 1, 0, 10, 11, -1, 8, 6, 4, 10, -1, 9, 3, 1, 11, -1, 7, 9, 11, 5, -1, 10, 0, 2, 8, -1, 4, 5, 11, 10, -1, 2, 3, 9, 8, -1
-                                                            ]
-                                                          }
+                                                    DEF GRIP_C HingeJoint {
+                                                      jointParameters HingeJointParameters {
+                                                        anchor 5.21541e-08 0.00192595 0.0657499
+                                                      }
+                                                      device [
+                                                        RotationalMotor {
+                                                          name "grip_c_motor"
                                                         }
                                                       ]
+                                                      endPoint Solid {
+                                                        translation 5.21541e-08 0.00192595 0.0657499
+                                                        rotation 1 0 0 0
+                                                        children [
+                                                          Shape {
+                                                            appearance DEF MATERIAL PBRAppearance {
+                                                              baseColor 0.8 0.8 0.8
+                                                              roughness 0.5
+                                                              metalness 0
+                                                            }
+                                                            geometry IndexedFaceSet {
+                                                              coord DEF COORDS_ME_SHAPE_INDEXEDFACESET_009 Coordinate {
+                                                                point [
+                                                                  -0.012335 -3.43125e-09 0.013134
+                                                                  0.012335 6.75836e-09 0.013134
+                                                                  -0.012335 -6.75836e-09 -0.013134
+                                                                  0.012335 3.43125e-09 -0.013134
+                                                                  -0.012335 -0.163764 -0.026622
+                                                                  0.0123351 -0.163764 -0.026622
+                                                                  -0.012335 -0.163764 -0.05289
+                                                                  0.0123351 -0.163764 -0.05289
+                                                                  -0.012335 -0.0818821 -0.013134
+                                                                  0.012335 -0.0818821 -0.013134
+                                                                  -0.012335 -0.0818821 0.013134
+                                                                  0.012335 -0.0818821 0.013134
+                                                                ]
+                                                              }
+                                                              coordIndex [
+                                                                0, 1, 3, 2, -1, 8, 9, 7, 6, -1, 6, 7, 5, 4, -1, 1, 0, 10, 11, -1, 8, 6, 4, 10, -1, 9, 3, 1, 11, -1, 7, 9, 11, 5, -1, 10, 0, 2, 8, -1, 4, 5, 11, 10, -1, 2, 3, 9, 8, -1
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                        name "grip_c_motor"
+                                                        boundingObject Transform {
+                                                          translation 2.56114e-08 -0.0818821 -0.019878
+                                                          children [
+                                                            Box {
+                                                              size 0.0246701 0.163764 0.0660241
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
                                                     }
-                                                    DEF GRIP_002 Transform {
-                                                      translation 0.0656731 0.00192595 -5.96046e-08
-                                                      children [
-                                                        Shape {
-                                                          appearance DEF MATERIAL PBRAppearance {
-                                                            baseColor 0.8 0.8 0.8
-                                                            roughness 0.5
-                                                            metalness 0
-                                                          }
-                                                          geometry IndexedFaceSet {
-                                                            coord DEF COORDS_ME_SHAPE_INDEXEDFACESET_010 Coordinate {
-                                                              point [
-                                                                0.013134 6.98717e-09 0.012335
-                                                                0.013134 3.86247e-09 -0.012335
-                                                                -0.013134 -3.86247e-09 0.012335
-                                                                -0.013134 -6.98717e-09 -0.012335
-                                                                -0.0266219 -0.163764 0.012335
-                                                                -0.026622 -0.163764 -0.012335
-                                                                -0.05289 -0.163764 0.0123351
-                                                                -0.05289 -0.163764 -0.012335
-                                                                -0.013134 -0.0818821 0.012335
-                                                                -0.013134 -0.0818821 -0.012335
-                                                                0.013134 -0.0818821 0.012335
-                                                                0.013134 -0.0818821 -0.012335
-                                                              ]
-                                                            }
-                                                            coordIndex [
-                                                              0, 1, 3, 2, -1, 8, 9, 7, 6, -1, 6, 7, 5, 4, -1, 1, 0, 10, 11, -1, 8, 6, 4, 10, -1, 9, 3, 1, 11, -1, 7, 9, 11, 5, -1, 10, 0, 2, 8, -1, 4, 5, 11, 10, -1, 2, 3, 9, 8, -1
-                                                            ]
-                                                          }
+                                                    DEF GRIP_A HingeJoint {
+                                                      jointParameters HingeJointParameters {
+                                                        axis 0 0 1
+                                                        anchor 0.0656731 0.00192595 -5.96046e-08
+                                                      }
+                                                      device [
+                                                        RotationalMotor {
+                                                          name "grip_a_motor"
                                                         }
                                                       ]
+                                                      endPoint Solid {
+                                                        translation 0.0656731 0.00192595 -5.96046e-08
+                                                        rotation 0 0 1 0
+                                                        children [
+                                                          Shape {
+                                                            appearance DEF MATERIAL PBRAppearance {
+                                                              baseColor 0.8 0.8 0.8
+                                                              roughness 0.5
+                                                              metalness 0
+                                                            }
+                                                            geometry IndexedFaceSet {
+                                                              coord DEF COORDS_ME_SHAPE_INDEXEDFACESET_010 Coordinate {
+                                                                point [
+                                                                  0.013134 6.98717e-09 0.012335
+                                                                  0.013134 3.86247e-09 -0.012335
+                                                                  -0.013134 -3.86247e-09 0.012335
+                                                                  -0.013134 -6.98717e-09 -0.012335
+                                                                  -0.0266219 -0.163764 0.012335
+                                                                  -0.026622 -0.163764 -0.012335
+                                                                  -0.05289 -0.163764 0.0123351
+                                                                  -0.05289 -0.163764 -0.012335
+                                                                  -0.013134 -0.0818821 0.012335
+                                                                  -0.013134 -0.0818821 -0.012335
+                                                                  0.013134 -0.0818821 0.012335
+                                                                  0.013134 -0.0818821 -0.012335
+                                                                ]
+                                                              }
+                                                              coordIndex [
+                                                                0, 1, 3, 2, -1, 8, 9, 7, 6, -1, 6, 7, 5, 4, -1, 1, 0, 10, 11, -1, 8, 6, 4, 10, -1, 9, 3, 1, 11, -1, 7, 9, 11, 5, -1, 10, 0, 2, 8, -1, 4, 5, 11, 10, -1, 2, 3, 9, 8, -1
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                        name "grip_a_motor"
+                                                        boundingObject Transform {
+                                                          translation -0.019878 -0.0818821 1.86265e-08
+                                                          children [
+                                                            Box {
+                                                              size 0.066024 0.163764 0.0246701
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
                                                     }
-                                                    DEF GRIP_003 Transform {
-                                                      translation -0.06575 0.00192595 -5.96046e-08
-                                                      children [
-                                                        Shape {
-                                                          appearance DEF MATERIAL PBRAppearance {
-                                                            baseColor 0.8 0.8 0.8
-                                                            roughness 0.5
-                                                            metalness 0
-                                                          }
-                                                          geometry IndexedFaceSet {
-                                                            coord DEF COORDS_ME_SHAPE_INDEXEDFACESET_011 Coordinate {
-                                                              point [
-                                                                -0.013134 -6.98717e-09 -0.012335
-                                                                -0.013134 -3.86247e-09 0.012335
-                                                                0.013134 3.86247e-09 -0.012335
-                                                                0.013134 6.98717e-09 0.012335
-                                                                0.0266221 -0.163764 -0.012335
-                                                                0.0266221 -0.163764 0.012335
-                                                                0.0528901 -0.163764 -0.012335
-                                                                0.0528901 -0.163764 0.012335
-                                                                0.013134 -0.0818821 -0.012335
-                                                                0.013134 -0.0818821 0.012335
-                                                                -0.013134 -0.0818821 -0.012335
-                                                                -0.013134 -0.0818821 0.012335
-                                                              ]
-                                                            }
-                                                            coordIndex [
-                                                              0, 1, 3, 2, -1, 8, 9, 7, 6, -1, 6, 7, 5, 4, -1, 1, 0, 10, 11, -1, 8, 6, 4, 10, -1, 9, 3, 1, 11, -1, 7, 9, 11, 5, -1, 10, 0, 2, 8, -1, 4, 5, 11, 10, -1, 2, 3, 9, 8, -1
-                                                            ]
-                                                          }
+                                                    DEF GRIP_B HingeJoint {
+                                                      jointParameters HingeJointParameters {
+                                                        axis 0 0 1
+                                                        anchor -0.06575 0.00192595 -5.96046e-08
+                                                      }
+                                                      device [
+                                                        RotationalMotor {
+                                                          name "grip_b_motor"
                                                         }
                                                       ]
+                                                      endPoint Solid {
+                                                        translation -0.06575 0.00192595 -5.96046e-08
+                                                        rotation 0 0 1 0
+                                                        children [
+                                                          Shape {
+                                                            appearance DEF MATERIAL PBRAppearance {
+                                                              baseColor 0.8 0.8 0.8
+                                                              roughness 0.5
+                                                              metalness 0
+                                                            }
+                                                            geometry IndexedFaceSet {
+                                                              coord DEF COORDS_ME_SHAPE_INDEXEDFACESET_011 Coordinate {
+                                                                point [
+                                                                  -0.013134 -6.98717e-09 -0.012335
+                                                                  -0.013134 -3.86247e-09 0.012335
+                                                                  0.013134 3.86247e-09 -0.012335
+                                                                  0.013134 6.98717e-09 0.012335
+                                                                  0.0266221 -0.163764 -0.012335
+                                                                  0.0266221 -0.163764 0.012335
+                                                                  0.0528901 -0.163764 -0.012335
+                                                                  0.0528901 -0.163764 0.012335
+                                                                  0.013134 -0.0818821 -0.012335
+                                                                  0.013134 -0.0818821 0.012335
+                                                                  -0.013134 -0.0818821 -0.012335
+                                                                  -0.013134 -0.0818821 0.012335
+                                                                ]
+                                                              }
+                                                              coordIndex [
+                                                                0, 1, 3, 2, -1, 8, 9, 7, 6, -1, 6, 7, 5, 4, -1, 1, 0, 10, 11, -1, 8, 6, 4, 10, -1, 9, 3, 1, 11, -1, 7, 9, 11, 5, -1, 10, 0, 2, 8, -1, 4, 5, 11, 10, -1, 2, 3, 9, 8, -1
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                        name "grip_b_motor"
+                                                        boundingObject Transform {
+                                                          translation 0.019878 -0.0818821 5.12227e-09
+                                                          children [
+                                                            Box {
+                                                              size 0.0660241 0.163764 0.02467
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
                                                     }
                                                   ]
                                                   name "grip_base_motor"
