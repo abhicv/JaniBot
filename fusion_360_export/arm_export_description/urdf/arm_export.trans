@@ -1,56 +1,56 @@
 <?xml version="1.0" ?>
 <robot name="arm_export" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="Rev32_tran">
+<transmission name="motor_1_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev32">
+  <joint name="motor_1">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev32_actr">
+  <actuator name="motor_1_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev34_tran">
+<transmission name="motor_2_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev34">
+  <joint name="motor_2">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev34_actr">
+  <actuator name="motor_2_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev36_tran">
+<transmission name="motor_4_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev36">
+  <joint name="motor_4">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev36_actr">
+  <actuator name="motor_4_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev39_tran">
+<transmission name="motor_5_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev39">
+  <joint name="motor_5">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev39_actr">
+  <actuator name="motor_5_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev40_tran">
+<transmission name="motor_3_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev40">
+  <joint name="motor_3">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev40_actr">
+  <actuator name="motor_3_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
