@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="base_export" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find base_export_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find base_export_description)/urdf/base_export.trans" />
+<xacro:include filename="$(find base_export_description)/urdf/base_export.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.3482345382752994 -0.27514770765017643 0.19695481512469734"/>
+    <mass value="155.853533341384"/>
+    <inertia ixx="24.527524" ixy="0.013804" ixz="-0.002107" iyy="13.832614" iyz="-2.456883" izz="21.12491"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Double_Wheel__Thin__v11_v3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.027863208093181154 -6.429566710543232e-11 5.495589618411427e-10"/>
+    <mass value="3.260021800926923"/>
+    <inertia ixx="0.009383" ixy="0.0" ixz="-0.0" iyy="0.005841" iyz="-0.0" izz="0.005841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.024 -0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/Double_Wheel__Thin__v11_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.024 -0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/Double_Wheel__Thin__v11_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Double_Wheel__Thin__v11_v3__1__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.027863044321248198 1.7510568478515984e-07 5.493755826604987e-10"/>
+    <mass value="3.260021800926923"/>
+    <inertia ixx="0.009383" ixy="0.0" ixz="0.0" iyy="0.005841" iyz="0.0" izz="0.005841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.72108 0.000192 0.0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/Double_Wheel__Thin__v11_v3__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.72108 0.000192 0.0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/Double_Wheel__Thin__v11_v3__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Double_Wheel__Thin__v11_v3__2__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.027863208093183288 -6.429579091360438e-11 5.495594355558359e-10"/>
+    <mass value="3.260021800926923"/>
+    <inertia ixx="0.009383" ixy="0.0" ixz="-0.0" iyy="0.005841" iyz="-0.0" izz="0.005841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.024 0.665 -0.0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/Double_Wheel__Thin__v11_v3__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.024 0.665 -0.0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/Double_Wheel__Thin__v11_v3__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Double_Wheel__Thin__v11_v3__3__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.027863044321161157 1.7510568439682572e-07 5.495610077369151e-10"/>
+    <mass value="3.260021800926923"/>
+    <inertia ixx="0.009383" ixy="0.0" ixz="0.0" iyy="0.005841" iyz="0.0" izz="0.005841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.72108 0.665192 -0.0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/Double_Wheel__Thin__v11_v3__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.72108 0.665192 -0.0"/>
+    <geometry>
+      <mesh filename="package://base_export_description/meshes/Double_Wheel__Thin__v11_v3__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev26" type="continuous">
+  <origin rpy="0 0 0" xyz="0.024 0.0 0.0"/>
+  <parent link="base_link"/>
+  <child link="Double_Wheel__Thin__v11_v3_1"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="Rev27" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.72108 -0.000192 0.0"/>
+  <parent link="base_link"/>
+  <child link="Double_Wheel__Thin__v11_v3__1__1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rev28" type="continuous">
+  <origin rpy="0 0 0" xyz="0.024 -0.665 0.0"/>
+  <parent link="base_link"/>
+  <child link="Double_Wheel__Thin__v11_v3__2__1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rev29" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.72108 -0.665192 0.0"/>
+  <parent link="base_link"/>
+  <child link="Double_Wheel__Thin__v11_v3__3__1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+</joint>
+
+</robot>
