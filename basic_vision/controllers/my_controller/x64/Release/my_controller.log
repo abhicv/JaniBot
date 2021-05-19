@@ -1,0 +1,8 @@
+﻿  my_controller.cpp
+E:\Robots\basic_vision\controllers\my_controller\my_controller.cpp(188,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating code
+  40 of 441 functions ( 9.1%) were compiled, the rest were copied from previous compilation.
+    24 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  my_controller.vcxproj -> E:\Robots\basic_vision\controllers\my_controller\my_controller.exe
