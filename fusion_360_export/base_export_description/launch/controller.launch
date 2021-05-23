@@ -1,7 +1,7 @@
 <launch>
 
 <rosparam file="$(find base_export_description)/launch/controller.yaml" command="load"/>
-<node args="Rev26_position_controller Rev27_position_controller Rev28_position_controller Rev29_position_controller joint_state_controller " name="controller_spawner" ns="base_export" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+<node args="Rev11_position_controller Rev12_position_controller Rev13_position_controller Rev14_position_controller joint_state_controller " name="controller_spawner" ns="base_export" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
 <node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
   <remap from="/joint_states" to="/base_export/joint_states"/>
 </node>

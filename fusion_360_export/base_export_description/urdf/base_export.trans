@@ -1,45 +1,45 @@
 <?xml version="1.0" ?>
 <robot name="base_export" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="Rev26_tran">
+<transmission name="Rev11_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev26">
+  <joint name="Rev11">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev26_actr">
+  <actuator name="Rev11_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev27_tran">
+<transmission name="Rev12_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev27">
+  <joint name="Rev12">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev27_actr">
+  <actuator name="Rev12_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev28_tran">
+<transmission name="Rev13_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev28">
+  <joint name="Rev13">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev28_actr">
+  <actuator name="Rev13_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Rev29_tran">
+<transmission name="Rev14_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev29">
+  <joint name="Rev14">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Rev29_actr">
+  <actuator name="Rev14_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>

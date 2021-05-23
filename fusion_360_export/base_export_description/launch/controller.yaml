@@ -5,19 +5,19 @@ base_export_controller:
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  Rev26_position_controller:
+  Rev11_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev26
+    joint: Rev11
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev27_position_controller:
+  Rev12_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev27
+    joint: Rev12
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev28_position_controller:
+  Rev13_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev28
+    joint: Rev13
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev29_position_controller:
+  Rev14_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev29
+    joint: Rev14
     pid: {p: 100.0, i: 0.01, d: 10.0}
