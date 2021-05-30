@@ -1,1 +1,1 @@
-Janitorial Robot development repositry for ArtPark Robotics Challenge
+Janitorial Robot development repository for ArtPark Robotics Challenge
