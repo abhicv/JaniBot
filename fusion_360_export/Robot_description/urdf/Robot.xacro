@@ -1,0 +1,496 @@
+<?xml version="1.0" ?>
+<robot name="Robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Robot_description)/urdf/Robot.trans" />
+<xacro:include filename="$(find Robot_description)/urdf/Robot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.004639774814419823 1.4771468453425644e-05 0.22530002486564402"/>
+    <mass value="90.2870635836035"/>
+    <inertia ixx="10.456164" ixy="1.4e-05" ixz="-0.360506" iyy="16.958749" iyz="0.000256" izz="18.430844"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_base_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.10852318160677482 9.021804964276997e-14 0.07021798038523674"/>
+    <mass value="2.9829690964186772"/>
+    <inertia ixx="0.017973" ixy="0.0" ixz="-0.002884" iyy="0.024074" iyz="0.0" izz="0.02919"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.51905 -0.0 -0.555847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.51905 -0.0 -0.555847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="base_turnable_v14_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.004673714897230008 0.029934483757072104 0.10053910370878505"/>
+    <mass value="7.350921302447738"/>
+    <inertia ixx="0.40707" ixy="0.000566" ixz="-0.000291" iyy="0.39669" iyz="-0.055433" izz="0.023619"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.44405 0.0 -0.735847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/base_turnable_v14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.44405 0.0 -0.735847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/base_turnable_v14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="NEMA_34_v2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-3.221002877085155e-06 -0.07651505285685486 4.86867707816252e-07"/>
+    <mass value="5.3165200877598835"/>
+    <inertia ixx="0.014133" ixy="2e-06" ixz="0.0" iyy="0.005731" iyz="0.0" izz="0.014133"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.53405 0.04 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_34_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.53405 0.04 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_34_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="stepper_joint_v6_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.3000711618360583e-13 -0.0075000000000001316 4.86867707816252e-07"/>
+    <mass value="0.03498948817935604"/>
+    <inertia ixx="4e-06" ixy="-0.0" ixz="0.0" iyy="7e-06" iyz="-0.0" izz="4e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.53405 0.00348 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/stepper_joint_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.53405 0.00348 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/stepper_joint_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_1_v13_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.2614820661654448 0.00749999999999987 4.86867707816252e-07"/>
+    <mass value="1.2422891158221263"/>
+    <inertia ixx="0.000414" ixy="-0.0" ixz="-0.0" iyy="0.03033" iyz="0.0" izz="0.029962"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.53405 0.00348 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/link_1_v13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.53405 0.00348 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/link_1_v13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="joint_v6_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.01779978543392735 -0.026213672668365277 4.86867707816252e-07"/>
+    <mass value="0.8743627585315773"/>
+    <inertia ixx="0.000864" ixy="8.4e-05" ixz="0.0" iyy="0.000992" iyz="0.0" izz="0.001253"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-1.04905 0.00348 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/joint_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-1.04905 0.00348 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/joint_v6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_2_v8_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.17692221361514116 -0.02499852381758487 4.868677079272743e-07"/>
+    <mass value="1.5478777520934175"/>
+    <inertia ixx="0.001209" ixy="0.002603" ixz="-0.0" iyy="0.032303" iyz="0.0" izz="0.032482"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-1.11905 0.03848 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/link_2_v8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-1.11905 0.03848 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/link_2_v8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="joint_end_v3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.011579118062804206 0.03379678599677132 4.868677079272743e-07"/>
+    <mass value="1.063293416063342"/>
+    <inertia ixx="0.00115" ixy="-7.6e-05" ixz="-0.0" iyy="0.000747" iyz="-0.0" izz="0.001353"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-1.57405 0.06848 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/joint_end_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-1.57405 0.06848 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/joint_end_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="NEMA_24_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="7.655954076257743e-08 2.556813320462289e-06 0.04795128172176"/>
+    <mass value="2.4982959259379585"/>
+    <inertia ixx="0.002718" ixy="0.0" ixz="-0.0" iyy="0.002718" iyz="-0.0" izz="0.001293"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.31905 0.0 -0.615847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_24_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.31905 0.0 -0.615847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_24_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="NEMA_24_v1__1__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="7.655954081808858e-08 -0.047950794854052424 3.0436810282141735e-06"/>
+    <mass value="2.4982959259379585"/>
+    <inertia ixx="0.002718" ixy="0.0" ixz="0.0" iyy="0.001293" iyz="0.0" izz="0.002718"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.67155 0.00348 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_24_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.67155 0.00348 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_24_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="NEMA_24_v1__2__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.047950794854052514 -7.655954092217199e-08 3.0436810282141735e-06"/>
+    <mass value="2.4982959259379585"/>
+    <inertia ixx="0.001293" ixy="-0.0" ixz="0.0" iyy="0.002718" iyz="-0.0" izz="0.002718"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-1.01905 0.03848 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_24_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-1.01905 0.03848 -0.820847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_24_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="NEMA_24_v1__3__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0009492051459472073 7.655954062379955e-08 -0.02980206994561252"/>
+    <mass value="2.4982959259379585"/>
+    <inertia ixx="0.001293" ixy="0.0" ixz="-0.0" iyy="0.002718" iyz="-0.0" izz="0.002718"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-1.06905 0.03598 -0.790847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_24_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-1.06905 0.03598 -0.790847"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/NEMA_24_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Double_Wheel__Thin__v11_v3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-3.5966591938052517e-07 0.027463106395432424 3.514880312152635e-07"/>
+    <mass value="3.260021800926923"/>
+    <inertia ixx="0.005841" ixy="-0.0" ixz="-0.0" iyy="0.009383" iyz="0.0" izz="0.005841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.394801 0.390178 -0.033729"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Double_Wheel__Thin__v11_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.394801 0.390178 -0.033729"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Double_Wheel__Thin__v11_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Double_Wheel__Thin__v11_v3__1__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.096467722756401e-07 -0.02746330979092404 3.5148803025075726e-07"/>
+    <mass value="3.260021800926923"/>
+    <inertia ixx="0.005841" ixy="-0.0" ixz="0.0" iyy="0.009383" iyz="-0.0" izz="0.005841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.394579 -0.390822 -0.033729"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Double_Wheel__Thin__v11_v3__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.394579 -0.390822 -0.033729"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Double_Wheel__Thin__v11_v3__1__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Double_Wheel__Thin__v11_v3__2__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.0964677233115125e-07 -0.027463309790926815 3.51488031312408e-07"/>
+    <mass value="3.260021800926923"/>
+    <inertia ixx="0.005841" ixy="-0.0" ixz="0.0" iyy="0.009383" iyz="-0.0" izz="0.005841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.395421 -0.390822 -0.033729"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Double_Wheel__Thin__v11_v3__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.395421 -0.390822 -0.033729"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Double_Wheel__Thin__v11_v3__2__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Double_Wheel__Thin__v11_v3__3__1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-3.596659204907482e-07 0.02746310639543431 3.514880312152635e-07"/>
+    <mass value="3.260021800926923"/>
+    <inertia ixx="0.005841" ixy="-0.0" ixz="-0.0" iyy="0.009383" iyz="0.0" izz="0.005841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.395199 0.390178 -0.033729"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Double_Wheel__Thin__v11_v3__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.395199 0.390178 -0.033729"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Double_Wheel__Thin__v11_v3__3__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Intel_RealSense_D435_v3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0010440004277676995 0.0010696020063957895 0.01201086694379927"/>
+    <mass value="0.2739287989936542"/>
+    <inertia ixx="0.000177" ixy="2e-06" ixz="0.0" iyy="2.6e-05" iyz="-0.0" izz="0.000178"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.44905 -0.09 -1.765675"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Intel_RealSense_D435_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.44905 -0.09 -1.765675"/>
+    <geometry>
+      <mesh filename="package://Robot_description/meshes/Intel_RealSense_D435_v3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.51905 0.0 0.555847"/>
+  <parent link="base_link"/>
+  <child link="arm_base_1"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.075 -0.0 0.18"/>
+  <parent link="arm_base_1"/>
+  <child link="base_turnable_v14_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Rigid3" type="fixed">
+  <origin rpy="0 0 0" xyz="0.09 -0.04 0.085"/>
+  <parent link="base_turnable_v14_1"/>
+  <child link="NEMA_34_v2_1"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.03652 0.0"/>
+  <parent link="NEMA_34_v2_1"/>
+  <child link="stepper_joint_v6_1"/>
+</joint>
+
+<joint name="Rev5" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="stepper_joint_v6_1"/>
+  <child link="link_1_v13_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rev6" type="continuous">
+  <origin rpy="0 0 0" xyz="0.515 0.0 0.0"/>
+  <parent link="link_1_v13_1"/>
+  <child link="joint_v6_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rev7" type="continuous">
+  <origin rpy="0 0 0" xyz="0.07 -0.035 0.0"/>
+  <parent link="joint_v6_1"/>
+  <child link="link_2_v8_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rev8" type="continuous">
+  <origin rpy="0 0 0" xyz="0.455 -0.03 0.0"/>
+  <parent link="link_2_v8_1"/>
+  <child link="joint_end_v3_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rigid9" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.2 -0.0 0.06"/>
+  <parent link="arm_base_1"/>
+  <child link="NEMA_24_v1_1"/>
+</joint>
+
+<joint name="Rigid10" type="fixed">
+  <origin rpy="0 0 0" xyz="0.1375 0.0 0.0"/>
+  <parent link="link_1_v13_1"/>
+  <child link="NEMA_24_v1__1__1"/>
+</joint>
+
+<joint name="Rigid11" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.03 -0.035 0.0"/>
+  <parent link="joint_v6_1"/>
+  <child link="NEMA_24_v1__2__1"/>
+</joint>
+
+<joint name="Rigid12" type="fixed">
+  <origin rpy="0 0 0" xyz="0.02 -0.0325 -0.03"/>
+  <parent link="joint_v6_1"/>
+  <child link="NEMA_24_v1__3__1"/>
+</joint>
+
+<joint name="Rev13" type="continuous">
+  <origin rpy="0 0 0" xyz="0.394801 -0.390178 0.033729"/>
+  <parent link="base_link"/>
+  <child link="Double_Wheel__Thin__v11_v3_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rev14" type="continuous">
+  <origin rpy="0 0 0" xyz="0.394579 0.390822 0.033729"/>
+  <parent link="base_link"/>
+  <child link="Double_Wheel__Thin__v11_v3__1__1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="Rev15" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.395421 0.390822 0.033729"/>
+  <parent link="base_link"/>
+  <child link="Double_Wheel__Thin__v11_v3__2__1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="Rev16" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.395199 -0.390178 0.033729"/>
+  <parent link="base_link"/>
+  <child link="Double_Wheel__Thin__v11_v3__3__1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rigid17" type="fixed">
+  <origin rpy="0 0 0" xyz="0.005 0.09 1.029828"/>
+  <parent link="base_turnable_v14_1"/>
+  <child link="Intel_RealSense_D435_v3_1"/>
+</joint>
+
+</robot>
