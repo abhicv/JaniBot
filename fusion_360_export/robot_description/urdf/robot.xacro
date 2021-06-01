@@ -4,6 +4,9 @@
 <xacro:include filename="$(find robot_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find robot_description)/urdf/robot.trans" />
 <xacro:include filename="$(find robot_description)/urdf/robot.gazebo" />
+<xacro:include filename="$(find robot_description)/urdf/_d435.urdf.xacro"/>
+
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-1.4771468453599796e-05 -0.4394102251855798 -0.5105474620020639"/>
@@ -466,6 +469,11 @@
   </collision>
 </link>
 
+
+
+<link name="RealSense_Camera_1"/>
+
+<!--
 <link name="RealSense_Camera_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.0010696020063957895 0.0010440004277679424 0.012011380076091704"/>
@@ -486,6 +494,15 @@
     </geometry>
   </collision>
 </link>
+-->
+
+<!-- begin other fuckup -->
+<xacro:sensor_d435 parent="RealSense_Camera_1">
+	<!--<origin rpy="0 0 0" xyz="-0.44905 -0.09 -1.765675"/>-->
+	<origin rpy="0 0 0" xyz="0 0 0"/>
+</xacro:sensor_d435>
+
+
 
 <joint name="Rigid1" type="fixed">
   <origin rpy="0 0 0" xyz="0.0 0.075 -0.18"/>
@@ -631,5 +648,4 @@
   <child link="RealSense_Camera_1"/>
   <axis xyz="0.0 0.0 -1.0"/>
 </joint>
-
 </robot>
