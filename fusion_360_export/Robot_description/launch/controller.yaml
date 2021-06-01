@@ -1,55 +1,59 @@
-Robot_controller:
+robot:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  Rev2_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev2
+  link_1_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: link_1_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev5_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev5
+  link_2_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: link_2_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev6_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev6
+  link_3_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: link_3_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev7_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev7
+  link_end_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: link_end_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev8_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev8
+  finger_1_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: finger_1_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev13_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev13
+  finger_2_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: finger_2_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev14_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev14
+  finger_3_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: finger_3_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev15_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev15
+  wheel_joint_front_left_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: wheel_joint_front_left
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev16_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev16
+  wheel_joint_back_right_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: wheel_joint_back_right
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev19_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev19
+  wheel_joint_front_right_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: wheel_joint_front_right
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev20_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev20
+  wheel_joint_back_left_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: wheel_joint_back_left
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev21_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Rev21
+  arm_base_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: arm_base_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  camera_revolute_position_controller:
+    type: position_controllers/JointPositionController
+    joint: camera_revolute
     pid: {p: 100.0, i: 0.01, d: 10.0}
