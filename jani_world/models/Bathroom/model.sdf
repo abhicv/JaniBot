@@ -5,8 +5,8 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://Bathroom/meshes/base_link.stl</uri>
+            <scale>1 1 1</scale>
+            <uri>model://Bathroom/meshes/bathroom.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -14,8 +14,8 @@
         <pose frame=''>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <scale>0.001 0.001 0.001</scale>
-            <uri>model://Bathroom/meshes/base_link.stl</uri>
+            <scale>1 1 1</scale>
+            <uri>model://Bathroom/meshes/bathroom.dae</uri>
           </mesh>
         </geometry>
       </visual>
