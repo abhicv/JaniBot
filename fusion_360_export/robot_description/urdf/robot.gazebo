@@ -11,13 +11,21 @@
 </gazebo>
 
 <gazebo>
-    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <odometryRate>20.0</odometryRate>
-      <robotBaseFrame>base_link</robotBaseFrame>
-    </plugin>
+  <plugin name="nexus_ros_force_based_move" filename="libnexus_ros_force_based_move.so">
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <odometryRate>25.0</odometryRate>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <cmdVelTimeOut>0.25</cmdVelTimeOut>
+    <publishOdometryTf>0</publishOdometryTf>
+    <yaw_velocity_p_gain>100.0</yaw_velocity_p_gain>
+    <x_velocity_p_gain>100.0</x_velocity_p_gain>
+    <y_velocity_p_gain>100.0</y_velocity_p_gain>
+    <max_x_velocity>10000.0</max_x_velocity>
+    <max_y_velocity>10000.0</max_y_velocity>
+    <max_yaw_velocity>5.0</max_yaw_velocity>
+  </plugin>
 </gazebo>
 
 <gazebo reference="base_link">
@@ -64,13 +72,6 @@
 </gazebo>
 
 <gazebo reference="link_end_1">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
-
-<gazebo reference="NEMA_24_1_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
@@ -128,29 +129,29 @@
 
 <gazebo reference="wheel_front_left_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>0.0</mu1>
+  <mu2>0.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_back_right_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>0.0</mu1>
+  <mu2>0.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_front_right_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>0.0</mu1>
+  <mu2>0.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_back_left_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>0.0</mu1>
+  <mu2>0.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
@@ -176,6 +177,41 @@
 </gazebo>
 
 <gazebo reference="RealSense_Camera_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="NEMA_24_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="DistanceSensor_front_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="DistanceSensor_left_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="DistanceSensor_right_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="DistanceSensor_back_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>

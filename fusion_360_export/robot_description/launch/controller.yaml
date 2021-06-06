@@ -33,6 +33,7 @@ robot:
     type: position_controllers/JointPositionController
     joint: finger_3_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
+    
   wheel_joint_front_left_position_controller:
     type: velocity_controllers/JointVelocityController
     joint: wheel_joint_front_left
@@ -49,6 +50,7 @@ robot:
     type: velocity_controllers/JointVelocityController
     joint: wheel_joint_back_left
     pid: {p: 100.0, i: 0.01, d: 10.0}
+
   arm_base_joint_position_controller:
     type: position_controllers/JointPositionController
     joint: arm_base_joint
