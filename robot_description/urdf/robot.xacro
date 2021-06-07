@@ -6,6 +6,14 @@
 <xacro:include filename="$(find robot_description)/urdf/robot.gazebo" />
 <xacro:include filename="$(find robot_description)/urdf/_d435.urdf.xacro"/>
 
+<link name="base_frame"></link>
+
+<joint name="base_frame_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="base_frame"/>
+  <child link="base_link"/>
+</joint>
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.00015399363028194057 -0.03925075208016042 0.2644524795806922"/>
@@ -300,6 +308,7 @@
   </collision>
 </link>
 
+<!--WHEELS-->
 <link name="wheel_front_left_1">
   <inertial>
     <origin rpy="0 0 0" xyz="4.432951922206385e-07 -0.02746282748166934 -1.346983284356007e-07"/>

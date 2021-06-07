@@ -78,6 +78,7 @@
   </actuator>
 </transmission>
 
+<!--
 <transmission name="wheel_joint_front_left_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="wheel_joint_front_left">
@@ -121,6 +122,7 @@
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
+-->
 
 <transmission name="arm_base_joint_tran">
   <type>transmission_interface/SimpleTransmission</type>
