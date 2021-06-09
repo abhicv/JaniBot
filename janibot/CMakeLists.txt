@@ -7,6 +7,7 @@ find_package(catkin REQUIRED
   roscpp
   std_msgs
   geometry_msgs
+  pcl_ros
 )
 
 catkin_package()
@@ -18,3 +19,6 @@ include_directories(
 
 add_executable(BaseDriverNode src/BaseDriverNode.cpp)
 target_link_libraries(BaseDriverNode ${catkin_LIBRARIES})
+
+add_executable(DoorDetector src/DoorDetector.cpp)
+target_link_libraries(DoorDetector ${catkin_LIBRARIES})

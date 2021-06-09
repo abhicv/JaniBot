@@ -4,7 +4,7 @@
 #include "std_msgs/Float64.h"
 #include "geometry_msgs/Twist.h"
 
-#define WHEEL_VELOCITY 10.0
+#define WHEEL_VELOCITY 30.0
 
 std_msgs::Float64 wheel_bl;
 std_msgs::Float64 wheel_br;
@@ -13,7 +13,7 @@ std_msgs::Float64 wheel_fr;
 
 void CmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg)
 {
-    ROS_INFO("cmd_vel: x: %f, y: %f\n", msg->linear.x, msg->linear.y);
+    ROS_INFO("cmd_vel: x: %f, y: %f, rotz: %f\n", msg->linear.x, msg->linear.y, msg->angular.z);
     
     if(msg->linear.x == 0.0 && msg->linear.y == 0.0) //stop
     {
@@ -22,18 +22,33 @@ void CmdVelCallback(const geometry_msgs::Twist::ConstPtr& msg)
         wheel_fl.data = 0.0;
         wheel_fr.data = 0.0;
     }
-    else if(msg->linear.x == 0.0 && msg->linear.y > 0.0) //forward
+    else if(msg->linear.x > 0.0 && msg->linear.y == 0.0) //forward
     {
         wheel_bl.data = -WHEEL_VELOCITY;
         wheel_br.data = WHEEL_VELOCITY;
         wheel_fl.data = -WHEEL_VELOCITY;
         wheel_fr.data = WHEEL_VELOCITY;
     }
-    else if(msg->linear.x == 0.0 && msg->linear.y < 0.0) //backward
+    else if(msg->linear.x < 0.0 && msg->linear.y == 0.0) //backward
     {
         wheel_bl.data = WHEEL_VELOCITY;
         wheel_br.data = -WHEEL_VELOCITY;
         wheel_fl.data = WHEEL_VELOCITY;
+        wheel_fr.data = -WHEEL_VELOCITY;
+    }
+    
+    if(msg->angular.z > 0.0) //rotate right
+    {
+        wheel_bl.data = WHEEL_VELOCITY;
+        wheel_br.data = WHEEL_VELOCITY;
+        wheel_fl.data = WHEEL_VELOCITY;
+        wheel_fr.data = WHEEL_VELOCITY;
+    }
+    else if(msg->angular.z < 0.0) //rotate left
+    {
+        wheel_bl.data = -WHEEL_VELOCITY;
+        wheel_br.data = -WHEEL_VELOCITY;
+        wheel_fl.data = -WHEEL_VELOCITY;
         wheel_fr.data = -WHEEL_VELOCITY;
     }
 }
