@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="default_map" default="false"/>
+  <arg name="world" default="config_1.world"/>
+  <arg name="gui" default="true" />
+  <param name="robot_description" command="$(find xacro)/xacro $(find robot_description)/urdf/robot.xacro"/> 
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find jani_world)/worlds/$(arg world)" unless="$(arg default_map)"/>
+    <arg name="world_name" value="worlds/empty.world" if="$(arg default_map)"/>
+    <arg name="paused" value="false"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+  
+  <!--  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -x 0 -y 0 -z 0.77217"
+    respawn="false" output="screen" />  -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -x 0 -y 0 -z 0" 
+    respawn="false" output="screen" /> 
+  <include file="$(find jani_arm_control)/launch/ros_controllers.launch"/> 
+</launch>

@@ -1,0 +1,23 @@
+<sdf version='1.6'>
+  <model name='bathroom_config_4'>
+  <static>true</static>
+    <link name='link'>  
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bathroom_config_4/meshes/bathroom_config_4.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bathroom_config_4/meshes/bathroom_config_4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

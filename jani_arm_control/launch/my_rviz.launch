@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+ 
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <rosparam param="source_list">[move_group/fake_controller_joint_states]</rosparam>
+    <rosparam param="source_list">[/joint_states]</rosparam> 
+  </node>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+  <include file="$(find jani_arm_control)/launch/moveit_rviz.launch">
+    <arg name="rviz_config" value="$(find jani_arm_control)/launch/moveit.rviz"/>
+    <arg name="debug" value="false"/>
+  </include>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 base_link arm_base_1" />
+  <include file="$(find jani_arm_control)/launch/default_warehouse_db.launch" if="false">
+    <arg name="moveit_warehouse_database_path" value="$(find jani_arm_control)/default_warehouse_mongo_db"/>
+  </include>
+</launch>
+  
