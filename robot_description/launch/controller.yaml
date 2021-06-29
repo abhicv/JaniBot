@@ -1,0 +1,59 @@
+
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  link_1_joint_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: link_1_joint
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  link_2_joint_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: link_2_joint
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  link_3_joint_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: link_3_joint
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  link_end_joint_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: link_end_joint
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  finger_1_joint_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: finger_1_joint
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  finger_2_joint_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: finger_2_joint
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  finger_3_joint_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: finger_3_joint
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  #wheel_joint_front_left_position_controller:
+   # type: velocity_controllers/JointVelocityController
+    #joint: wheel_joint_front_left
+   # pid: {p: 100.0, i: 0.01, d: 0.0}
+ # wheel_joint_back_right_position_controller:
+  #  type: velocity_controllers/JointVelocityController
+   # joint: wheel_joint_back_right
+    #pid: {p: 100.0, i: 0.01, d: 0.0}
+  #wheel_joint_front_right_position_controller:
+   # type: velocity_controllers/JointVelocityController
+    #joint: wheel_joint_front_right
+    #pid: {p: 100.0, i: 0.01, d: 0.0}
+  #wheel_joint_back_left_position_controller:
+   # type: velocity_controllers/JointVelocityController
+    #joint: wheel_joint_back_left
+    #pid: {p: 100.0, i: 0.01, d: 0.0}
+  arm_base_joint_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: arm_base_joint
+    pid: {p: 100.0, i: 0.01, d: 0.0}
+  camera_revolute_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: camera_revolute
+    pid: {p: 100.0, i: 0.01, d: 0.0}
