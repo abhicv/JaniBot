@@ -175,7 +175,7 @@ mvt.publishTrajectoryLine(my_plan.trajectory_, joint_model_group);
 mvt.trigger();
 
 mvt.prompt("Press 'next' in the RvizVisualToolsGui window to continue");
-mvt.deleteAllMarkers();
+mvt.deleteAllMarkers(); 
 mvt.trigger();
 
 */
