@@ -59,14 +59,14 @@ int main(int argc, char **argv)
     
     ros::NodeHandle nodeObj;
     
-    ros::Publisher wheel_bl_cmd_publisher = nodeObj.advertise<std_msgs::Float64>("/robot/wheel_joint_back_left_position_controller/command", 100);
-    ros::Publisher wheel_br_cmd_publisher = nodeObj.advertise<std_msgs::Float64>("/robot/wheel_joint_back_right_position_controller/command", 100);
-    ros::Publisher wheel_fl_cmd_publisher = nodeObj.advertise<std_msgs::Float64>("/robot/wheel_joint_front_left_position_controller/command", 100);
-    ros::Publisher wheel_fr_cmd_publisher = nodeObj.advertise<std_msgs::Float64>("/robot/wheel_joint_front_right_position_controller/command", 100);
+    ros::Publisher wheel_bl_cmd_publisher = nodeObj.advertise<std_msgs::Float64>("/robot/wheel_joint_back_left_position_controller/command", 10);
+    ros::Publisher wheel_br_cmd_publisher = nodeObj.advertise<std_msgs::Float64>("/robot/wheel_joint_back_right_position_controller/command", 10);
+    ros::Publisher wheel_fl_cmd_publisher = nodeObj.advertise<std_msgs::Float64>("/robot/wheel_joint_front_left_position_controller/command", 10);
+    ros::Publisher wheel_fr_cmd_publisher = nodeObj.advertise<std_msgs::Float64>("/robot/wheel_joint_front_right_position_controller/command", 10);
     
     ros::Subscriber cmd_vel_subscriber = nodeObj.subscribe("/cmd_vel", 10, CmdVelCallback);
     
-    ros::Rate loopRate(100);
+    ros::Rate loopRate(100); 
     
     wheel_bl.data = 0.0;
     wheel_br.data = 0.0;

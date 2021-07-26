@@ -8,6 +8,7 @@ find_package(catkin REQUIRED
   std_msgs
   geometry_msgs
   pcl_ros
+  tf
 )
 
 catkin_package()
