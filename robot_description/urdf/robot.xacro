@@ -56,7 +56,7 @@
   </collision>
 </link>
 
-<link name="stepper_joint_1">
+<!-- <link name="stepper_joint_1">
   <inertial>
     <origin rpy="0 0 0" xyz="2.341512516101929e-07 -0.007499523545187715 1.1102230246251565e-16"/>
     <mass value="0.10172869711405369"/>
@@ -306,7 +306,7 @@
       <mesh filename="package://robot_description/meshes/gripper_finger_3_1.dae" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
-</link>
+</link> -->
 
 <!--WHEELS-->
 <link name="wheel_front_left_1">
@@ -451,7 +451,7 @@
   </collision>
 </link>
 
-<link name="NEMA_34_1">
+<!-- <link name="NEMA_34_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-1.8231621852216051e-06 -0.07677876842578721 -1.1102230246251565e-16"/>
     <mass value="8.323733041924031"/>
@@ -470,7 +470,7 @@
       <mesh filename="package://robot_description/meshes/NEMA_34_1.dae" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
-</link>
+</link> -->
 
 <!--
 <link name="RealSense_Camera_1">
@@ -500,7 +500,7 @@
 	<origin rpy="0 0 0" xyz="0 0 0"/>
 </xacro:sensor_d435>
 
-<link name="NEMA_24_1_1">
+<!-- <link name="NEMA_24_1_1">
   <inertial>
     <origin rpy="0 0 0" xyz="3.1071066247667645e-07 3.0332681329736655e-06 0.04795079485405218"/>
     <mass value="2.4982959259379585"/>
@@ -603,7 +603,7 @@
       <mesh filename="package://robot_description/meshes/DistanceSensor_back_1.dae" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
-</link>
+</link> -->
 
 <joint name="Rigid1" type="fixed">
   <origin rpy="0 0 0" xyz="0.514256 -0.039266 0.595"/>
@@ -611,6 +611,7 @@
   <child link="arm_base_1"/>
 </joint>
 
+<!-- 
 <joint name="Rigid4" type="fixed">
   <origin rpy="0 0 0" xyz="0.0 0.03652 0.0"/>
   <parent link="NEMA_34_1"/>
@@ -688,7 +689,7 @@
   <parent link="gripper_base_1"/>
   <child link="gripper_finger_3_1"/>
   <axis xyz="0.0 0.5 0.866025"/>
-</joint>
+</joint> -->
 
 <joint name="wheel_joint_front_left" type="continuous">
   <origin rpy="0 0 0" xyz="0.389785 0.351556 0.072882"/>
@@ -730,12 +731,12 @@
   <child link="base_turnable_1"/>
   <axis xyz="-0.0 0.0 -1.0"/>
 </joint>
-
+<!-- 
 <joint name="Rigid28" type="fixed">
   <origin rpy="0 0 0" xyz="0.09 -0.04 0.085"/>
   <parent link="base_turnable_1"/>
   <child link="NEMA_34_1"/>
-</joint>
+</joint> -->
 
 <joint name="camera_revolute" type="continuous">
   <origin rpy="0 0 0" xyz="0.005 0.09 0.629827"/>
@@ -743,7 +744,7 @@
   <child link="RealSense_Camera_1"/>
   <axis xyz="-0.0 0.0 -1.0"/>
 </joint>
-
+<!-- 
 <joint name="Rigid30" type="fixed">
   <origin rpy="0 0 0" xyz="-0.2 0.0 0.06"/>
   <parent link="arm_base_1"/>
@@ -772,6 +773,6 @@
   <origin rpy="0 0 0" xyz="-0.523844 -0.039266 0.051064"/>
   <parent link="base_link"/>
   <child link="DistanceSensor_back_1"/>
-</joint>
+</joint> -->
 
 </robot>

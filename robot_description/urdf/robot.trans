@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
-
+<!-- 
 <transmission name="link_1_joint_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="link_1_joint">
@@ -76,9 +76,8 @@
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
-</transmission>
+</transmission> -->
 
-<!--
 <transmission name="wheel_joint_front_left_tran">
   <type>transmission_interface/SimpleTransmission</type>
   <joint name="wheel_joint_front_left">
@@ -122,7 +121,6 @@
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
--->
 
 <transmission name="arm_base_joint_tran">
   <type>transmission_interface/SimpleTransmission</type>

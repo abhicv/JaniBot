@@ -1,6 +1,7 @@
 <launch>
 
 <rosparam file="$(find robot_description)/launch/controller.yaml" command="load"/>
+
 <node args=" link_1_joint_position_controller 
             link_2_joint_position_controller 
             link_3_joint_position_controller 
@@ -9,8 +10,13 @@
             finger_2_joint_position_controller 
             finger_3_joint_position_controller 
             arm_base_joint_position_controller 
-            camera_revolute_position_controller 
+            camera_revolute_position_controller
+            wheel_joint_front_left_position_controller
+            wheel_joint_back_right_position_controller
+            wheel_joint_front_right_position_controller
+            wheel_joint_back_left_position_controller 
             joint_state_controller " name="controller_spawner" ns="robot" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+
 <node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
   <remap from="/joint_states" to="/robot/joint_states"/>
 </node>
