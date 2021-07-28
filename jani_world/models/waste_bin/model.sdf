@@ -1,0 +1,23 @@
+<sdf version='1.6'>
+  <model name='waste_bin'>
+  <static>true</static>
+    <link name='link'>  
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://waste_bin/meshes/waste_bin.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://waste_bin/meshes/waste_bin.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
