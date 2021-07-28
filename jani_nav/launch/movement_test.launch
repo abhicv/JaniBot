@@ -1,0 +1,15 @@
+<launch>    
+    
+    <include file="$(find robot_description)/launch/gazebo.launch"/>
+    <include file="$(find robot_description)/launch/controller.launch"/>
+
+    <node name="depthimage_to_laserscan" pkg="depthimage_to_laserscan" type="depthimage_to_laserscan"
+        args="-output_frame_id camera_depth_optical_frame">
+        <remap from="/image" to="/camera/depth/image_raw"/>
+        <remap from="/camera_info" to="/camera/depth/camera_info"/>      
+    </node>
+
+    <!-- <node name="BaseDriverNode" pkg="janibot" type="BaseDriverNode"/> -->
+    <!-- <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/> -->
+
+</launch>
