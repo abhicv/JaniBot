@@ -1,8 +1,0 @@
-<launch>
-  <arg name="world" default="config_1.world"/>
-  <param command="$(find xacro)/xacro $(find robot_description)/urdf/robot.xacro" name="robot_description"/>
-  <node args="-param robot_description -urdf -model robot -x 0 -y 0 -z" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find jani_world)/worlds/$(arg world)"/>
-  </include>
-</launch>
