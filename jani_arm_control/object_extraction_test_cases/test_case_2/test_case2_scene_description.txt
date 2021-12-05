@@ -1,0 +1,6 @@
+(This text case is done to see if we can extract multiple coke can in presence of other objects)
+test_case_relation:related to coke extraction
+world_used: config_3.world
+planes: 1 ground_plane + 3 planes from walls
+objects: 2 coke + 1 dustbin + 1 toilet 
+Robot_location: in the middle of the room
