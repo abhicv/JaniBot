@@ -17,38 +17,114 @@
         <joint name="link_2_joint"/>
         <joint name="link_3_joint"/>
         <joint name="link_end_joint"/>
+        <joint name="gripper_axis_rev"/>
     </group>
     <group name="gripper">
-        <joint name="Rigid18"/>
-        <joint name="finger_1_joint"/>
-        <joint name="finger_2_joint"/>
-        <joint name="finger_3_joint"/>
+        <joint name="finger_1_revolute_joint"/>
+        <joint name="finger_2_revolute_joint"/>
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="home" group="arm">
-        <joint name="arm_base_joint" value="-3.1415"/>
-        <joint name="link_1_joint" value="0"/>
+        <joint name="arm_base_joint" value="0"/>
+        <joint name="gripper_axis_rev" value="0"/>
+        <joint name="link_1_joint" value="-2.26"/>
         <joint name="link_2_joint" value="-1.57"/>
         <joint name="link_3_joint" value="0"/>
         <joint name="link_end_joint" value="0"/>
     </group_state>
-    <group_state name="trial_arm_pose" group="arm">
-        <joint name="arm_base_joint" value="1.57"/>
-        <joint name="link_1_joint" value="-1.57"/>
-        <joint name="link_2_joint" value="1.57"/>
-        <joint name="link_3_joint" value="0"/>
-        <joint name="link_end_joint" value="-1.57"/>
-    </group_state>
-    <group_state name="open" group="gripper">
-        <joint name="finger_1_joint" value="0"/>
-        <joint name="finger_2_joint" value="0"/>
-        <joint name="finger_3_joint" value="0"/>
-    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="hand" parent_link="link_end_1" group="gripper" parent_group="arm"/>
-    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-   <!-- <virtual_joint name="arm_to_base_virtual" type="fixed" parent_frame="base_link" child_link="base_turnable_1"/> -->
+    <end_effector name="end_effector" parent_link="modified_gripper_v3_1" group="gripper" parent_group="arm"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="DistanceSensor_back_1" link2="DistanceSensor_front_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="DistanceSensor_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="DistanceSensor_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="NEMA_24_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="NEMA_24_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="NEMA_24_3_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="NEMA_24_4_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="NEMA_34_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="arm_base_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="base_link" reason="Adjacent"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="base_turnable_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="finger_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="finger_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="link_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="link_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="link_3_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="modified_gripper_v3_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="nylon_platform_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="stepper_joint_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="wheel_back_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="wheel_back_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="wheel_front_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_back_1" link2="wheel_front_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="DistanceSensor_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="DistanceSensor_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="NEMA_24_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="NEMA_24_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="NEMA_24_3_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="NEMA_24_4_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="NEMA_34_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="arm_base_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="base_link" reason="Adjacent"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="base_turnable_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="link_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="link_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="nylon_platform_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="stepper_joint_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="wheel_back_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="wheel_back_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="wheel_front_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_front_1" link2="wheel_front_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="DistanceSensor_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="NEMA_24_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="NEMA_24_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="NEMA_24_3_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="NEMA_24_4_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="NEMA_34_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="arm_base_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="base_link" reason="Adjacent"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="base_turnable_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="finger_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="finger_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="link_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="link_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="nylon_platform_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="stepper_joint_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="wheel_back_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="wheel_back_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="wheel_front_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_left_1" link2="wheel_front_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="NEMA_24_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="NEMA_24_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="NEMA_24_3_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="NEMA_24_4_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="NEMA_34_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="arm_base_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="base_link" reason="Adjacent"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="base_turnable_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="finger_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="link_1_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="link_2_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="nylon_platform_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="stepper_joint_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="wheel_back_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="wheel_back_right_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="wheel_front_left_1" reason="Never"/>
+    <disable_collisions link1="DistanceSensor_right_1" link2="wheel_front_right_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_1_1" link2="NEMA_24_3_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_1_1" link2="NEMA_24_4_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_1_1" link2="NEMA_34_1" reason="Never"/>
@@ -56,6 +132,8 @@
     <disable_collisions link1="NEMA_24_1_1" link2="base_link" reason="Never"/>
     <disable_collisions link1="NEMA_24_1_1" link2="base_turnable_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_1_1" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="NEMA_24_1_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_1_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_1_1" link2="link_2_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_1_1" link2="nylon_platform_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_1_1" link2="stepper_joint_1" reason="Never"/>
@@ -68,6 +146,8 @@
     <disable_collisions link1="NEMA_24_2_1" link2="NEMA_34_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_2_1" link2="base_link" reason="Never"/>
     <disable_collisions link1="NEMA_24_2_1" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="NEMA_24_2_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_2_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_2_1" link2="link_1_1" reason="Adjacent"/>
     <disable_collisions link1="NEMA_24_2_1" link2="link_2_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_2_1" link2="link_end_1" reason="Never"/>
@@ -81,14 +161,15 @@
     <disable_collisions link1="NEMA_24_3_1" link2="NEMA_34_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_3_1" link2="base_turnable_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_3_1" link2="camera_link" reason="Never"/>
-    <disable_collisions link1="NEMA_24_3_1" link2="gripper_base_1" reason="Never"/>
-    <disable_collisions link1="NEMA_24_3_1" link2="gripper_finger_1_1" reason="Never"/>
-    <disable_collisions link1="NEMA_24_3_1" link2="gripper_finger_2_1" reason="Never"/>
-    <disable_collisions link1="NEMA_24_3_1" link2="gripper_finger_3_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_3_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_3_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_3_1" link2="finger_1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_3_1" link2="finger_2_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_3_1" link2="link_1_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_3_1" link2="link_2_1" reason="Adjacent"/>
     <disable_collisions link1="NEMA_24_3_1" link2="link_3_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_3_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_3_1" link2="modified_gripper_v3_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_3_1" link2="nylon_platform_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_3_1" link2="stepper_joint_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_3_1" link2="wheel_back_left_1" reason="Never"/>
@@ -99,14 +180,15 @@
     <disable_collisions link1="NEMA_24_4_1" link2="arm_base_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_4_1" link2="base_turnable_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_4_1" link2="camera_link" reason="Never"/>
-    <disable_collisions link1="NEMA_24_4_1" link2="gripper_base_1" reason="Never"/>
-    <disable_collisions link1="NEMA_24_4_1" link2="gripper_finger_1_1" reason="Never"/>
-    <disable_collisions link1="NEMA_24_4_1" link2="gripper_finger_2_1" reason="Never"/>
-    <disable_collisions link1="NEMA_24_4_1" link2="gripper_finger_3_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_4_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_4_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_4_1" link2="finger_1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_4_1" link2="finger_2_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_4_1" link2="link_1_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_4_1" link2="link_2_1" reason="Adjacent"/>
     <disable_collisions link1="NEMA_24_4_1" link2="link_3_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_4_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="NEMA_24_4_1" link2="modified_gripper_v3_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_4_1" link2="nylon_platform_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_4_1" link2="stepper_joint_1" reason="Never"/>
     <disable_collisions link1="NEMA_24_4_1" link2="wheel_back_left_1" reason="Never"/>
@@ -117,6 +199,8 @@
     <disable_collisions link1="NEMA_34_1" link2="base_link" reason="Never"/>
     <disable_collisions link1="NEMA_34_1" link2="base_turnable_1" reason="Adjacent"/>
     <disable_collisions link1="NEMA_34_1" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="NEMA_34_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="NEMA_34_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
     <disable_collisions link1="NEMA_34_1" link2="link_1_1" reason="Never"/>
     <disable_collisions link1="NEMA_34_1" link2="link_2_1" reason="Never"/>
     <disable_collisions link1="NEMA_34_1" link2="nylon_platform_1" reason="Never"/>
@@ -128,6 +212,8 @@
     <disable_collisions link1="arm_base_1" link2="base_link" reason="Adjacent"/>
     <disable_collisions link1="arm_base_1" link2="base_turnable_1" reason="Adjacent"/>
     <disable_collisions link1="arm_base_1" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="arm_base_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="arm_base_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
     <disable_collisions link1="arm_base_1" link2="link_2_1" reason="Never"/>
     <disable_collisions link1="arm_base_1" link2="nylon_platform_1" reason="Never"/>
     <disable_collisions link1="arm_base_1" link2="stepper_joint_1" reason="Never"/>
@@ -137,13 +223,16 @@
     <disable_collisions link1="arm_base_1" link2="wheel_front_right_1" reason="Never"/>
     <disable_collisions link1="base_link" link2="base_turnable_1" reason="Never"/>
     <disable_collisions link1="base_link" link2="camera_link" reason="Never"/>
+    <disable_collisions link1="base_link" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Never"/>
     <disable_collisions link1="base_link" link2="nylon_platform_1" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="stepper_joint_1" reason="Never"/>
     <disable_collisions link1="base_link" link2="wheel_back_left_1" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="wheel_back_right_1" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="wheel_front_left_1" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="wheel_front_right_1" reason="Adjacent"/>
-    <disable_collisions link1="base_turnable_1" link2="camera_link" reason="Adjacent"/>
+    <disable_collisions link1="base_turnable_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Never"/>
+    <disable_collisions link1="base_turnable_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Adjacent"/>
     <disable_collisions link1="base_turnable_1" link2="link_2_1" reason="Never"/>
     <disable_collisions link1="base_turnable_1" link2="nylon_platform_1" reason="Never"/>
     <disable_collisions link1="base_turnable_1" link2="stepper_joint_1" reason="Never"/>
@@ -151,6 +240,8 @@
     <disable_collisions link1="base_turnable_1" link2="wheel_back_right_1" reason="Never"/>
     <disable_collisions link1="base_turnable_1" link2="wheel_front_left_1" reason="Never"/>
     <disable_collisions link1="base_turnable_1" link2="wheel_front_right_1" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" reason="Adjacent"/>
+    <disable_collisions link1="camera_link" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Default"/>
     <disable_collisions link1="camera_link" link2="link_1_1" reason="Never"/>
     <disable_collisions link1="camera_link" link2="link_2_1" reason="Never"/>
     <disable_collisions link1="camera_link" link2="link_3_1" reason="Never"/>
@@ -161,19 +252,36 @@
     <disable_collisions link1="camera_link" link2="wheel_back_right_1" reason="Never"/>
     <disable_collisions link1="camera_link" link2="wheel_front_left_1" reason="Never"/>
     <disable_collisions link1="camera_link" link2="wheel_front_right_1" reason="Never"/>
-    <disable_collisions link1="gripper_base_1" link2="gripper_finger_1_1" reason="Adjacent"/>
-    <disable_collisions link1="gripper_base_1" link2="gripper_finger_2_1" reason="Adjacent"/>
-    <disable_collisions link1="gripper_base_1" link2="gripper_finger_3_1" reason="Adjacent"/>
-    <disable_collisions link1="gripper_base_1" link2="link_2_1" reason="Never"/>
-    <disable_collisions link1="gripper_base_1" link2="link_end_1" reason="Adjacent"/>
-    <disable_collisions link1="gripper_finger_1_1" link2="link_2_1" reason="Never"/>
-    <disable_collisions link1="gripper_finger_1_1" link2="link_3_1" reason="Never"/>
-    <disable_collisions link1="gripper_finger_1_1" link2="link_end_1" reason="Never"/>
-    <disable_collisions link1="gripper_finger_2_1" link2="link_2_1" reason="Never"/>
-    <disable_collisions link1="gripper_finger_2_1" link2="link_end_1" reason="Never"/>
-    <disable_collisions link1="gripper_finger_3_1" link2="link_2_1" reason="Never"/>
-    <disable_collisions link1="gripper_finger_3_1" link2="link_3_1" reason="Never"/>
-    <disable_collisions link1="gripper_finger_3_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" reason="Adjacent"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="link_1_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="link_2_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="link_3_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="nylon_platform_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="stepper_joint_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="wheel_back_left_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="wheel_back_right_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="wheel_front_left_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" link2="wheel_front_right_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="finger_1_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="link_1_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="link_2_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="link_3_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="nylon_platform_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="stepper_joint_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="wheel_back_left_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="wheel_back_right_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="wheel_front_left_1" reason="Never"/>
+    <disable_collisions link1="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" link2="wheel_front_right_1" reason="Never"/>
+    <disable_collisions link1="finger_1_1" link2="link_2_1" reason="Never"/>
+    <disable_collisions link1="finger_1_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="finger_1_1" link2="modified_gripper_v3_1" reason="Adjacent"/>
+    <disable_collisions link1="finger_1_1" link2="wheel_back_left_1" reason="Never"/>
+    <disable_collisions link1="finger_2_1" link2="link_2_1" reason="Never"/>
+    <disable_collisions link1="finger_2_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="finger_2_1" link2="modified_gripper_v3_1" reason="Adjacent"/>
+    <disable_collisions link1="finger_2_1" link2="wheel_back_right_1" reason="Never"/>
     <disable_collisions link1="link_1_1" link2="link_2_1" reason="Adjacent"/>
     <disable_collisions link1="link_1_1" link2="nylon_platform_1" reason="Never"/>
     <disable_collisions link1="link_1_1" link2="stepper_joint_1" reason="Adjacent"/>
@@ -183,6 +291,7 @@
     <disable_collisions link1="link_1_1" link2="wheel_front_right_1" reason="Never"/>
     <disable_collisions link1="link_2_1" link2="link_3_1" reason="Adjacent"/>
     <disable_collisions link1="link_2_1" link2="link_end_1" reason="Never"/>
+    <disable_collisions link1="link_2_1" link2="modified_gripper_v3_1" reason="Never"/>
     <disable_collisions link1="link_2_1" link2="nylon_platform_1" reason="Never"/>
     <disable_collisions link1="link_2_1" link2="stepper_joint_1" reason="Never"/>
     <disable_collisions link1="link_2_1" link2="wheel_back_left_1" reason="Never"/>
@@ -192,7 +301,9 @@
     <disable_collisions link1="link_3_1" link2="link_end_1" reason="Adjacent"/>
     <disable_collisions link1="link_3_1" link2="wheel_back_left_1" reason="Never"/>
     <disable_collisions link1="link_3_1" link2="wheel_back_right_1" reason="Never"/>
+    <disable_collisions link1="link_end_1" link2="modified_gripper_v3_1" reason="Adjacent"/>
     <disable_collisions link1="link_end_1" link2="wheel_back_right_1" reason="Never"/>
+    <disable_collisions link1="modified_gripper_v3_1" link2="wheel_back_right_1" reason="Never"/>
     <disable_collisions link1="nylon_platform_1" link2="stepper_joint_1" reason="Never"/>
     <disable_collisions link1="nylon_platform_1" link2="wheel_back_left_1" reason="Never"/>
     <disable_collisions link1="nylon_platform_1" link2="wheel_back_right_1" reason="Never"/>
