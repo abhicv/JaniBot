@@ -1,0 +1,6 @@
+(This test case is to confirm that the code doesn't falsely recognise anything as coke can in absence of any object)  
+test_case_relation:related to coke extraction
+world: config_1.world
+planes: 1 gorund plane+ 1 plane from wall
+objects: no objects
+Robot_location: at the door
