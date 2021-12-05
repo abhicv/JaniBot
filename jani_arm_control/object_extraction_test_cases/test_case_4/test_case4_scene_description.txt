@@ -1,0 +1,6 @@
+(This text case is done to check wether rotating camera by yaw angle causes any issue and also to confirm the basin doesn't interfere)
+test_case_relation:related to coke extraction
+world_used: config_3.world
+planes: 1 ground_plane + 2 planes from walls
+objects: 1 coke + 1 toilet + 1 basin
+Robot_location: a somewhat inside the door
