@@ -1,0 +1,6 @@
+(This text case is done to check wether the code is able to extract both the coke and cup)
+test_case_relation:related to coke and cup extraction
+world_used: config_1.world
+planes: 1 ground_plane + 1 plane from wall
+objects: 1 coke + 1 cup 
+Robot_location: at the door
