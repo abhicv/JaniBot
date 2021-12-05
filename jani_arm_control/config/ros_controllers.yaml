@@ -14,10 +14,11 @@ hardware_interface:
     - link_2_joint
     - link_3_joint
     - link_end_joint
-    - finger_1_joint
-    - finger_2_joint
-    - finger_3_joint
-    - camera_revolute
+    - gripper_axis_rev
+    - finger_1_revolute_joint
+    - finger_2_revolute_joint
+    - camera_yaw_rotation
+    - camera_pitch_rotation
     - wheel_joint_back_left
     - wheel_joint_back_right
     - wheel_joint_front_left
@@ -39,14 +40,14 @@ controller_list:
       - link_2_joint
       - link_3_joint
       - link_end_joint
+      - gripper_axis_rev
   - name: gripper_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
     joints:
-      - finger_1_joint
-      - finger_2_joint
-      - finger_3_joint
+      - finger_1_revolute_joint
+      - finger_2_revolute_joint
 arm_controller:
   type: velocity_controllers/JointTrajectoryController
   joints:
@@ -55,25 +56,46 @@ arm_controller:
     - link_2_joint
     - link_3_joint
     - link_end_joint
+    - gripper_axis_rev
   gains:
     arm_base_joint: {p: 100.0, d: 0, i: 0.1}
     link_1_joint: {p: 100.0, d: 0, i: 0.1}
     link_2_joint: {p: 100.0, d: 0, i: 0.1}
     link_3_joint: {p: 100.0, d: 0, i: 0.1}
     link_end_joint: {p: 100.0, d: 0, i: 0.1}
+    gripper_axis_rev: {p: 100.0, d: 0, i: 0.1}
 gripper_controller:
   type: velocity_controllers/JointTrajectoryController
   joints:
-    - finger_1_joint
-    - finger_2_joint
-    - finger_3_joint
+    - finger_1_revolute_joint
+    - finger_2_revolute_joint
   gains:
-    finger_1_joint: {p: 100.0, d: 0, i: 0.1}
-    finger_2_joint: {p: 100.0, d: 0, i: 0.1}
-    finger_3_joint: {p: 100.0, d: 0, i: 0.1}
-camera_controller:
+    finger_1_revolute_joint: {p: 100.0, d: 0, i: 0.1}
+    finger_2_revolute_joint: {p: 100.0, d: 0, i: 0.1}
+  
+camera_yaw_controller:
   type: velocity_controllers/JointPositionController
-  joint: camera_revolute
+  joint: camera_yaw_rotation
   pid: {p: 100.0, d: 0, i: 0.1}
-
+camera_pitch_controller:
+  type: velocity_controllers/JointPositionController
+  joint: camera_pitch_rotation
+  pid: {p: 100.0, d: 0, i: 0.1}
+wheel_joint_back_left_controller:
+  type: velocity_controllers/JointPositionController
+  joint: wheel_joint_back_left
+  pid: {p: 100.0, d: 0, i: 0.1}
+wheel_joint_back_right_controller:
+  type: velocity_controllers/JointPositionController
+  joint: wheel_joint_back_right
+  pid: {p: 100.0, d: 0, i: 0.1}
+wheel_joint_front_left_controller:
+  type: velocity_controllers/JointPositionController
+  joint: wheel_joint_front_left
+  pid: {p: 100.0, d: 0, i: 0.1}
+wheel_joint_front_right_controller:
+  type: velocity_controllers/JointPositionController
+  joint: wheel_joint_front_right
+  pid: {p: 100.0, d: 0, i: 0.1}
+  
     
