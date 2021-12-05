@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <node name="arm_control" pkg="jani_arm_control" type="arm_control" respawn="false" 
-  output="screen" />
-</launch>
-
