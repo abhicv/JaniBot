@@ -180,3 +180,5 @@ gripper:
     - LazyPRMstar
     - SPARS
     - SPARStwo
+  projection_evaluator: joints(finger_1_revolute_joint,finger_2_revolute_joint)
+  longest_valid_segment_fraction: 0.005
