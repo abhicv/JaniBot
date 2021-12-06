@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find robot_description)/launch/gazebo.launch"/>
+    <include file="$(find robot_description)/launch/controller.launch"/>
+    <!--node name="BaseDriverNode" pkg="janibot" type="BaseDriverNode"/-->
+    <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
+</launch>

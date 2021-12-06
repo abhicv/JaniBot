@@ -1,0 +1,15 @@
+<launch>
+  <param command="$(find xacro)/xacro $(find robot_description)/urdf/robot.xacro" name="robot_description"/>
+  <arg name="world" default="config_1.world"/>
+  <node args="-param robot_description -urdf -model robot -x -0.5 -y 0 -z 0"  name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find jani_world)/worlds/$(arg world)"/> 
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+  <include file="$(find robot_description)/launch/controller.launch"/>
+</launch>
+
