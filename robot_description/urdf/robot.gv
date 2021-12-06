@@ -1,0 +1,119 @@
+digraph G {
+node [shape=box];
+"base_frame" [label="base_frame"];
+"base_link" [label="base_link"];
+"arm_base_1" [label="arm_base_1"];
+"NEMA_24_1_1" [label="NEMA_24_1_1"];
+"base_turnable_1" [label="base_turnable_1"];
+"NEMA_34_1" [label="NEMA_34_1"];
+"stepper_joint_1" [label="stepper_joint_1"];
+"link_1_1" [label="link_1_1"];
+"NEMA_24_2_1" [label="NEMA_24_2_1"];
+"link_2_1" [label="link_2_1"];
+"NEMA_24_3_1" [label="NEMA_24_3_1"];
+"NEMA_24_4_1" [label="NEMA_24_4_1"];
+"link_3_1" [label="link_3_1"];
+"link_end_1" [label="link_end_1"];
+"modified_gripper_v3_1" [label="modified_gripper_v3_1"];
+"finger_1_1" [label="finger_1_1"];
+"finger_2_1" [label="finger_2_1"];
+"camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" [label="camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1"];
+"camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" [label="camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1"];
+"RealSense_Camera_1" [label="RealSense_Camera_1"];
+"camera_bottom_screw_frame" [label="camera_bottom_screw_frame"];
+"camera_link" [label="camera_link"];
+"camera_depth_frame" [label="camera_depth_frame"];
+"camera_color_frame" [label="camera_color_frame"];
+"camera_color_optical_frame" [label="camera_color_optical_frame"];
+"camera_depth_optical_frame" [label="camera_depth_optical_frame"];
+"camera_left_ir_frame" [label="camera_left_ir_frame"];
+"camera_left_ir_optical_frame" [label="camera_left_ir_optical_frame"];
+"camera_right_ir_frame" [label="camera_right_ir_frame"];
+"camera_right_ir_optical_frame" [label="camera_right_ir_optical_frame"];
+"nylon_platform_1" [label="nylon_platform_1"];
+"DistanceSensor_front_1" [label="DistanceSensor_front_1"];
+"DistanceSensor_left_1" [label="DistanceSensor_left_1"];
+"DistanceSensor_right_1" [label="DistanceSensor_right_1"];
+"DistanceSensor_back_1" [label="DistanceSensor_back_1"];
+"wheel_back_left_1" [label="wheel_back_left_1"];
+"wheel_back_right_1" [label="wheel_back_right_1"];
+"wheel_front_left_1" [label="wheel_front_left_1"];
+"wheel_front_right_1" [label="wheel_front_right_1"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_frame" -> "base_frame_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_frame_joint" -> "base_link"
+"base_link" -> "Rigid1" [label="xyz: 0.514256 -0.039266 0.595 \nrpy: 0 -0 0"]
+"Rigid1" -> "arm_base_1"
+"arm_base_1" -> "Rigid30" [label="xyz: -0.2 0 0.06 \nrpy: 0 -0 0"]
+"Rigid30" -> "NEMA_24_1_1"
+"arm_base_1" -> "arm_base_joint" [label="xyz: -0.075 0 0.18 \nrpy: 0 -0 0"]
+"arm_base_joint" -> "base_turnable_1"
+"base_turnable_1" -> "Rigid28" [label="xyz: 0.09 -0.04 0.085 \nrpy: 0 -0 0"]
+"Rigid28" -> "NEMA_34_1"
+"NEMA_34_1" -> "Rigid4" [label="xyz: 0 0.03652 0 \nrpy: 0 -0 0"]
+"Rigid4" -> "stepper_joint_1"
+"stepper_joint_1" -> "link_1_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"link_1_joint" -> "link_1_1"
+"link_1_1" -> "Rigid10" [label="xyz: 0.1375 0 0 \nrpy: 0 -0 0"]
+"Rigid10" -> "NEMA_24_2_1"
+"link_1_1" -> "link_2_joint" [label="xyz: 0.515 0 0 \nrpy: 0 -0 0"]
+"link_2_joint" -> "link_2_1"
+"link_2_1" -> "Rigid11" [label="xyz: -0.03 -0.035 0 \nrpy: 0 -0 0"]
+"Rigid11" -> "NEMA_24_3_1"
+"link_2_1" -> "Rigid12" [label="xyz: 0.02 -0.0325 -0.03 \nrpy: 0 -0 0"]
+"Rigid12" -> "NEMA_24_4_1"
+"link_2_1" -> "link_3_joint" [label="xyz: 0.07 -0.035 0 \nrpy: 0 -0 0"]
+"link_3_joint" -> "link_3_1"
+"link_3_1" -> "link_end_joint" [label="xyz: 0.455 -0.03 0 \nrpy: 0 -0 0"]
+"link_end_joint" -> "link_end_1"
+"link_end_1" -> "gripper_axis_rev" [label="xyz: 0.05 0.04 0 \nrpy: 0 -0 0"]
+"gripper_axis_rev" -> "modified_gripper_v3_1"
+"modified_gripper_v3_1" -> "finger_1_revolute_joint" [label="xyz: 0.0845 -0.0325 0 \nrpy: 0 -0 0"]
+"finger_1_revolute_joint" -> "finger_1_1"
+"modified_gripper_v3_1" -> "finger_2_revolute_joint" [label="xyz: 0.0845 0.0325 0 \nrpy: 0 -0 0"]
+"finger_2_revolute_joint" -> "finger_2_1"
+"base_turnable_1" -> "camera_yaw_rotation" [label="xyz: 0.004109 0.09 0.629833 \nrpy: 0 -0 0"]
+"camera_yaw_rotation" -> "camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1"
+"camera_stuff_MODIFIED_camera_pitch_rotation_stand_v1_1" -> "camera_pitch_rotation" [label="xyz: -0.000147 -0.0335 0.034 \nrpy: 0 -0 0"]
+"camera_pitch_rotation" -> "camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1"
+"camera_stuff_MODIFIED_camera_pitch_rotation_base_v1_1" -> "Rigid49" [label="xyz: 0.000335 0.032499 0.010001 \nrpy: 0 -0 0"]
+"Rigid49" -> "RealSense_Camera_1"
+"RealSense_Camera_1" -> "camera_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"camera_joint" -> "camera_bottom_screw_frame"
+"camera_bottom_screw_frame" -> "camera_link_joint" [label="xyz: 0 0.0175 0.0125 \nrpy: 0 -0 0"]
+"camera_link_joint" -> "camera_link"
+"camera_link" -> "camera_depth_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"camera_depth_joint" -> "camera_depth_frame"
+"camera_depth_frame" -> "camera_color_joint" [label="xyz: 0 0.015 0 \nrpy: 0 -0 0"]
+"camera_color_joint" -> "camera_color_frame"
+"camera_color_frame" -> "camera_color_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 -1.5708"]
+"camera_color_optical_joint" -> "camera_color_optical_frame"
+"camera_depth_frame" -> "camera_depth_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 -1.5708"]
+"camera_depth_optical_joint" -> "camera_depth_optical_frame"
+"camera_depth_frame" -> "camera_left_ir_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"camera_left_ir_joint" -> "camera_left_ir_frame"
+"camera_left_ir_frame" -> "camera_left_ir_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 -1.5708"]
+"camera_left_ir_optical_joint" -> "camera_left_ir_optical_frame"
+"camera_depth_frame" -> "camera_right_ir_joint" [label="xyz: 0 -0.05 0 \nrpy: 0 -0 0"]
+"camera_right_ir_joint" -> "camera_right_ir_frame"
+"camera_right_ir_frame" -> "camera_right_ir_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 -1.5708"]
+"camera_right_ir_optical_joint" -> "camera_right_ir_optical_frame"
+"base_link" -> "Rigid26" [label="xyz: -0.242882 -0.039266 0.283202 \nrpy: 0 -0 0"]
+"Rigid26" -> "nylon_platform_1"
+"base_link" -> "Rigid31" [label="xyz: 0.514256 -0.039266 0.051064 \nrpy: 0 -0 0"]
+"Rigid31" -> "DistanceSensor_front_1"
+"base_link" -> "Rigid32" [label="xyz: -0.004794 0.279784 0.048649 \nrpy: 0 -0 0"]
+"Rigid32" -> "DistanceSensor_left_1"
+"base_link" -> "Rigid33" [label="xyz: -0.004794 -0.358316 0.048649 \nrpy: 0 -0 0"]
+"Rigid33" -> "DistanceSensor_right_1"
+"base_link" -> "Rigid34" [label="xyz: -0.523844 -0.039266 0.051064 \nrpy: 0 -0 0"]
+"Rigid34" -> "DistanceSensor_back_1"
+"base_link" -> "wheel_joint_back_left" [label="xyz: -0.400215 0.351556 0.072882 \nrpy: 0 -0 0"]
+"wheel_joint_back_left" -> "wheel_back_left_1"
+"base_link" -> "wheel_joint_back_right" [label="xyz: -0.399993 -0.429444 0.072882 \nrpy: 0 -0 0"]
+"wheel_joint_back_right" -> "wheel_back_right_1"
+"base_link" -> "wheel_joint_front_left" [label="xyz: 0.389785 0.351556 0.072882 \nrpy: 0 -0 0"]
+"wheel_joint_front_left" -> "wheel_front_left_1"
+"base_link" -> "wheel_joint_front_right" [label="xyz: 0.390007 -0.429444 0.072882 \nrpy: 0 -0 0"]
+"wheel_joint_front_right" -> "wheel_front_right_1"
+}

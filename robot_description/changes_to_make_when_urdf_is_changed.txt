@@ -1,0 +1,4 @@
+remove robot namespace from .gazebo file
+change hardware interface to hardware_interface/VelocityJointInterface in .trans file
+change the controllers configuration file accordingly
+change the controllers launch file accordingly
